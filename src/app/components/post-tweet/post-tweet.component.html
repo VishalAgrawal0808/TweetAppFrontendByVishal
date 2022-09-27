@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row" style="float: left;position: fixed;">
+        <div style="margin-top: 100px;margin-left: 100px;">
+            <img src="../../../assets/images/avatar.png" style="align-items: center;"  width="100" height="100" alt="">
+        </div>
+        <div class="row">
+            <div *ngIf="isSuccess" style="color: green;text-align: center;"> {{ tweet.response }}</div>
+            <div class="tweet-div card tweet-card" style="max-width: 60rem;background-color:whitesmoke ">
+                <div class="card-body">
+                    <form ngNativeValidate (ngSubmit)="postTweet()">
+                        <div class="form-group">
+                            <h3 class="text-blue"> {{name}} 
+                            </h3>
+                            <textarea name="tweetText" id="tweetText"
+                                [(ngModel)]="tweetText" required
+                                class="form-control"
+                                rows="2" placeholder="Tweet App"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <button type="submit" class="btn"
+                                style="background-color: olivedrab;color: white; padding: auto;
+                                margin-top: 10px;float: right; font-family: cursive;">Post Tweet</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="float: right;margin-right: 150px;">
+        <h1 style="font-family: cursive;margin-top: 20px; margin-bottom: 25px;margin-left: 30px;text-decoration: underline;">
+           Tweets & Replies
+        </h1>
+        <app-my-tweets></app-my-tweets>
+    </div>
+</div>

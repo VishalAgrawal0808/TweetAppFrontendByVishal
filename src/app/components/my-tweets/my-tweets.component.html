@@ -1,0 +1,38 @@
+<div class="container">
+    <div *ngFor="let user of get">
+        <div class="card tweet-card mb-3 my-auto mx-auto"
+            style="max-width: 30rem;margin-top: 10em;">
+            <div class="card-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-8" >
+                           <span *ngIf="tweetExist"> {{message}}</span>
+                        </div>
+                        <div class="col-8">
+                            <h6 class="card-title">Tweeted: {{ getPostedTweeetTime(user.createdDate)}}</h6>
+                        </div>
+                        <div class="col-4 ml-auto">
+                            <img
+                                src="../../assets/images/recycle.png "
+                                width="50" height="" style="float: right;"
+                                alt="delete"
+                                srcset="" class="ml-auto"
+                                (click)="delete(user.tweetId)">
+                        </div>
+                    </div>
+                </div>
+
+
+                <p class="card-text">{{user.tweet}}</p>
+
+            </div>
+            <div class="card-header" style="background-color: rgb(201, 196, 196);border-radius: 2px;">
+                <p style="margin-left: 10px;" *ngFor="let reply of user.replies|keyvalue"><b>{{reply.key}}
+                    Replied : </b>
+                    {{reply.value}}</p>
+            </div>
+
+        </div>
+
+    </div>
+</div>

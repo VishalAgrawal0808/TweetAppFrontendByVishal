@@ -1,0 +1,75 @@
+<nav class="navbar navbar-dark">
+  <div>
+    <img src="../../../assets/images/icon.png" style="margin-right: 10px;" width="50" height="50"
+      class="d-inline-block align-center mb-0" alt="">
+    <span class="navbar-brand mb-0 h1 center">TweetApp</span>
+  </div>
+</nav>
+<div class="container">
+  <div *ngIf="isUserRegisterd" style="color: green;text-align: center;"> USER REGISTERED SUCCESSFULLY</div>
+
+  <div class="card register-div-border" style="margin-top:40px;max-width: 60rem;">
+    <h1 class="text-blue mx-auto my-auto registerfont" style="margin-top:10px;">Register</h1>
+    <div class="card-body">
+      <form ngNativeValidate (ngSubmit)="register()">
+
+        <div class="row">
+          <div class="col-6">
+            <label for="exampleInputEmail1" class="text-design">First Name</label>
+            <input type="text" class="form-control" name="firstName" id="firstName" [(ngModel)]="firstName" required>
+          </div>
+          <div class="col-6">
+            <label for="exampleInputEmail1" class="text-design">Last name </label>
+            <input type="text" class="form-control" name="lastName" id="lastName" [(ngModel)]="lastName" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <label for="exampleInputEmail1" class="text-design">Email</label>
+            <input type="email" class="form-control" name="email" id="email" (keyup)="onKeyEmail()"
+              [(ngModel)]="emailId" required>
+            <small *ngIf="isEmail" style="color: red;">Email has been already
+              registered</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="exampleInputEmail1" class="text-design">Password</label>
+            <input type="password" (blur)="onpass()" class="form-control" name="password" id="password"
+              [(ngModel)]="password" required>
+          </div>
+          <div class="col">
+            <label for="exampleInputEmail1" class="text-design">Confirm Password</label>
+            <input type="password" class="form-control" (blur)="onCheckPassword()" name="confirmPassword"
+              id="confirmPassword" [(ngModel)]="confirmPassword" required>
+            <small *ngIf="isPassword" style="color: red;">Retype correct
+              password</small>
+          </div>
+          <div class="col">
+            <label for="exampleInputEmail1" class="text-design">Contact Details</label>
+            <input type="number" class="form-control" name="contactNumber" maxlength="10" minlength="10"
+              id="contactNumber" [(ngModel)]="contactNumber" required>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+
+          <div class="col"></div>
+          <div class="form-group">
+
+          </div>
+        </div>
+
+        <button type="submit" *ngIf='validForm' class="btn" style="background-color:rgb(128, 165, 54); 
+        color: white; font-family: cursive;margin-top: 10px; margin-left: 300px;">Register</button>
+        <button type="submit" *ngIf='!validForm' class="btn" style="background-color:rgb(128, 165, 54); 
+        color: white; font-family: cursive;margin-top: 10px;margin-left: 300px;"disabled>Register</button>
+
+      </form>
+      <h5 style="margin-inline-start:200px;font-family: cursive;margin-top: 15px;">Already registered?  <a style="text-decoration: green underline;color: olive;" href="#">Login here !</a></h5>
+    </div>
+
+  </div>
+
+</div>
+<!-- <app-footer></app-footer> -->

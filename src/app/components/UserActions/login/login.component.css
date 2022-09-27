@@ -1,0 +1,19 @@
+div {
+	
+    margin: auto;
+}
+.center {
+    margin: 0 auto !important;
+    float: none !important;
+ }
+ .loginfont {
+    font-family: cursive;
+ }
+ .card-radius {
+    border-radius: 20px;
+ }
+ .text-design{
+    font-family: cursive;
+    font-size: 20px;
+    margin-top: 20px;
+ }

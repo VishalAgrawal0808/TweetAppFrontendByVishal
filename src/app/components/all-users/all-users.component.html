@@ -1,0 +1,20 @@
+<div class="container">
+    <table class="table table-border">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Contact Number</th>
+                <th>EmailID</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of get">
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.contactNumber}} </td>
+                <td>{{user.emailId}} </td>
+            </tbody>
+        </table>
+    </div>

@@ -1,0 +1,10 @@
+.container{
+    margin-top: 10px;
+}
+.tweetfontcolor{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tweet-card{
+    border-radius: 8px;
+    border-color: olivedrab;
+}
